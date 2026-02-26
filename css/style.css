@@ -52,6 +52,7 @@ img {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+  margin-bottom: 70px;
 }
 
 .sec__bg-img {
@@ -106,8 +107,50 @@ img {
 .menu__container {
   width: 100%;
   margin: 0 auto;
+  padding: 16px;
+}
+@media screen and (max-width: 767px) {
+  .menu__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .menu__flex-left, .menu__flex-right {
   width: 48%;
-  padding: 16px;
+  padding: 45px;
+}
+@media screen and (max-width: 767px) {
+  .menu__flex-left, .menu__flex-right {
+    width: 100%;
+    padding: 16px;
+  }
+}
+.menu__flex-left {
+  border-right: 1px solid #333;
+}
+@media screen and (max-width: 767px) {
+  .menu__flex-left {
+    border-right: 0;
+  }
+}
+.menu dt,
+.menu dd {
+  font-size: 14px;
+  font-weight: normal;
+}
+.menu__line {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 16px;
+}
+.menu dt {
+  border-bottom: 1px dotted #333;
+  width: 80%;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+.menu dd {
+  padding: 8px;
 }/*# sourceMappingURL=style.css.map */
