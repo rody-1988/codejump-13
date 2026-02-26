@@ -142,7 +142,7 @@ img {
 .menu__line {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 16px;
 }
 .menu dt {
@@ -153,4 +153,67 @@ img {
 }
 .menu dd {
   padding: 8px;
+}
+
+.about__bg-img {
+  background-image: url(../img/about.jpg);
+}
+.about__container {
+  flex-direction: column;
+}
+.about__card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  line-height: 1.8;
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 767px) {
+  .about__card {
+    grid-template-columns: 1fr;
+    gap: 20;
+  }
+}
+.about__btn {
+  text-align: center;
+}
+.about a {
+  width: 160px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s ease;
+}
+.about a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #e03131;
+  border-left: 2px solid #e03131;
+  transition: all 0.4s ease;
+}
+.about a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid #e03131;
+  border-right: 2px solid #e03131;
+  transition: all 0.4s ease;
+}
+.about a:hover::before, .about a:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.location__bg-img {
+  background-image: url(/img/location.jpg);
 }/*# sourceMappingURL=style.css.map */

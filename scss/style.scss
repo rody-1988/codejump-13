@@ -148,6 +148,7 @@ img {
     width: 100%;
     margin: 0 auto;
     padding: $inner-padding;
+
     @include sp {
       display: flex;
       justify-content: center;
@@ -177,7 +178,7 @@ img {
   &__line {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 16px;
   }
   dt {
@@ -193,3 +194,74 @@ img {
 // ===================================
 // about
 // ===================================
+.about {
+  &__bg-img {
+    background-image: url(../img/about.jpg);
+  }
+  &__container {
+    flex-direction: column;
+  }
+  &__card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    line-height: 1.8;
+    margin-bottom: 60px;
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 20;
+    }
+  }
+  &__btn {
+    text-align: center;
+  }
+  a {
+    width: 160px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-top: 2px solid $sub-color;
+      border-left: 2px solid $sub-color;
+      transition: all 0.4s ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      border-bottom: 2px solid $sub-color;
+      border-right: 2px solid $sub-color;
+      transition: all 0.4s ease;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+// ===================================
+// location
+// ===================================
+.location {
+  &__bg-img {
+    background-image: url(/img/location.jpg);
+  }
+}
