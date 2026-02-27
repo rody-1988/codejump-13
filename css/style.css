@@ -140,11 +140,6 @@ img {
 .header__title {
   filter: drop-shadow(1px 1px 10px #c0c0c0);
 }
-@media screen and (max-width: 767px) {
-  .header {
-    background-color: #f7f7f7;
-  }
-}
 
 .menu__bg-img {
   background-image: url(../img/menu.jpg);

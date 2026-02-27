@@ -2,7 +2,6 @@
 // ===================================
 // 1. 変数
 // ===================================
-// サイトごとにここを書き換えるだけでOK！
 $main-color: #333; // メインの色
 $sub-color: #e03131; // サブの色
 $bg-color: #f7f7f7; // 背景色
@@ -53,7 +52,7 @@ img {
 }
 .container {
   display: flex;
-  // スマホの時は縦並びにする魔法
+  // スマホの時は縦並びにする
   @include sp {
     flex-direction: column;
   }
@@ -120,7 +119,6 @@ img {
   @include sp {
     margin-bottom: 10px;
   }
-  // ネスト（入れ子）を使って書く
   &__bg-img {
     width: 100%;
     height: 100vh;
@@ -159,11 +157,6 @@ img {
   }
   &__title {
     filter: drop-shadow(1px 1px 10px #c0c0c0);
-  }
-
-  // スマホ版の調整も同じ場所に書ける！
-  @include sp {
-    background-color: $bg-color;
   }
 }
 // ===================================
