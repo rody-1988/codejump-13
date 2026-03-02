@@ -18,7 +18,13 @@ $breakpoint: 767px; // スマホの境目
     @content;
   }
 }
-
+//背景の共通
+@mixin section-bg($img-path) {
+  background-image: url($img-path);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 // ===================================
 // 3. 基本設定（Base）
 // ===================================
@@ -28,12 +34,6 @@ body {
   font-family:
     "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
     "Meiryo", sans-serif;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
 }
 
 // ===================================
@@ -56,10 +56,6 @@ img {
   @include sp {
     flex-direction: column;
   }
-}
-.bg-img {
-  background: center no-repeat;
-  background-size: cover;
 }
 .sub__title,
 .item__title {
@@ -187,6 +183,29 @@ img {
       width: 100%;
       padding: 0;
     }
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    dt,
+    dd {
+      font-size: 14px;
+      font-weight: normal;
+    }
+    dt {
+      border-bottom: 1px dotted $main-color;
+      width: 80%;
+      padding: 4px;
+      margin-bottom: 20px;
+    }
+    dd {
+      width: 15%;
+      margin-bottom: 20px;
+      padding: 4px;
+      // padding-top: 16px;
+    }
   }
   &__flex-left {
     border-right: 1px solid $main-color;
@@ -196,31 +215,11 @@ img {
   }
   &__flex-right {
     dl:first-of-type {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
       @include sp {
         margin-bottom: 10px;
       }
     }
-  }
-  dt,
-  dd {
-    font-size: 14px;
-    font-weight: normal;
-  }
-  &__line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  dt {
-    border-bottom: 1px dotted $main-color;
-    width: 85%;
-    padding-bottom: 4px;
-    // margin-bottom: 8px;
-  }
-  dd {
-    padding-top: 16px;
   }
 }
 // ===================================
@@ -243,7 +242,7 @@ img {
 
     @include sp {
       grid-template-columns: 1fr;
-      gap: 20;
+      gap: 20px;
     }
   }
   &__btn {
